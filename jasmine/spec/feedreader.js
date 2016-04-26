@@ -34,7 +34,7 @@ $(function() {
         it('have a valid url', function() {
             var totalFeeds = allFeeds.length;
             for (var i = 0; i < totalFeeds; i++) {
-                //expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);  
             }
         });
