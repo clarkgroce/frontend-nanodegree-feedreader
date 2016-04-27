@@ -44,13 +44,13 @@ $(function() {
          * and that the name is not empty.
          */
 
-         it('have a valid name', function() {
+        it('have a valid name', function() {
             var totalFeeds = allFeeds.length;
             for (var i = 0; i < totalFeeds; i++) {
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name.length).not.toBe(0);
             }
-         });
+        });
     });
 
     /* TODO: Write a new test suite named "The menu" */
@@ -62,16 +62,26 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-         it('is hidden by default', function() {
+        it('is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
-         });
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-    });      
+
+        it('changes visibility on menu click', function() {
+            // menu icon clicked to show menu
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+
+            // menu is hidden again on menu icon click
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
