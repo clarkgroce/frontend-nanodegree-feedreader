@@ -124,12 +124,12 @@ $(function() {
             //load first feed
             loadFeed(0, function() {
                 firstFeedContent = $('.feed').html();
-            });
-            //load second feed
-            loadFeed(1, function() {
-                secondFeedContent = $('.feed').html();
-                done();
-            });
+                //load second feed
+                loadFeed(1, function() {
+                    secondFeedContent = $('.feed').html();
+                    done();
+                });
+            });    
         });
 
         it('should change content on new feed', function() {
